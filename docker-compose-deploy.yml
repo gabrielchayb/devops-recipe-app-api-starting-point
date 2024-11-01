@@ -9,10 +9,10 @@ services:
       - static-data:/vol/web/static
       - media-data:/vol/web/media
     environment:
-      - DB_HOST=db
+      - DB_HOST=dpg-csij0rrqf0us738qlcqg-a
       - DB_NAME=devdb
       - DB_USER=gabriel
-      - DB_PASS=123456
+      - DB_PASS=jOAlxcs9QvHAWck2KNFgMHzllGWHvAYA
       - SECRET_KEY=changeme
       - ALLOWED_HOSTS=127.0.0.1
     depends_on:
