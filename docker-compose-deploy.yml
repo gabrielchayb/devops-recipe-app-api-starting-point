@@ -9,12 +9,12 @@ services:
       - static-data:/vol/web/static
       - media-data:/vol/web/media
     environment:
-      - DB_HOST=dpg-csij0rrqf0us738qlcqg-a
-      - DB_NAME=devdb
-      - DB_USER=gabriel
-      - DB_PASS=jOAlxcs9QvHAWck2KNFgMHzllGWHvAYA
-      - SECRET_KEY=changeme
-      - ALLOWED_HOSTS=127.0.0.1
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - SECRET_KEY=${DJANGO_SECRET_KEY}
+      - ALLOWED_HOSTS=${DJANGO_ALLOWED_HOSTS}
     depends_on:
       - db
 
@@ -24,9 +24,9 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=devdb
-      - POSTGRES_USER=gabriel
-      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
 
   proxy:
     build:
